@@ -1,5 +1,8 @@
 'use strict'
 
+/*
+*regex check on form
+*/
 function validate(){
   var firstName = document.getElementById('firstName').value;
   var lastName = document.getElementById('lastName').value;
@@ -14,19 +17,23 @@ function validate(){
   var emailResult = emailRGEX.test(email);
   var passwordResult = passwordRGEX.test(password);
 
+/*
+*show error
+*/
+
   if (firstNameResult == false){
-  	
+  	console.log('unvalid first name');
   };
 
   if (lastNameResult == false){
-  	
+  	console.log('unvalid last name');
   };
 
   if (emailResult == false){
-  	
+  	console.log('unvalid email');
   };
 
   if (passwordResult == false){
-  	
+  	console.log('unvalid password');
   }
 }
