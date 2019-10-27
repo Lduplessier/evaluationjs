@@ -22,18 +22,18 @@ function validate(){
 */
 
   if (firstNameResult == false){
-  	console.log('unvalid first name');
+  	alert('unvalid first name');
   };
 
   if (lastNameResult == false){
-  	console.log('unvalid last name');
+  	alert('unvalid last name');
   };
 
   if (emailResult == false){
-  	console.log('unvalid email');
+  	alert('unvalid email');
   };
 
   if (passwordResult == false){
-  	console.log('unvalid password');
+  	alert('unvalid password');
   }
 }
