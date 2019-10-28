@@ -3,20 +3,21 @@
 /*
 *check phone number
 */
+var formSubmit = document.getElementById('submit');
+
+formSubmit.addEventListener('click', validate);
 
 function checkPhoneNumber(){
 	var phoneNumber = document.getElementById('phoneNumber').value;
-	var phoneNumberRGEX = /^(01|06|07)\ [1-9][0-9]{8}$/;
-	var phoneNumberResult = phoneNumberRGEX.test(phoneNumber);
-
+	var phoneNumberRGEX = /^(01|06|07)\d{8}$/;
 
 /*
 *return result
 */
 
-	if (phoneNumberResult == true){
-		console.log('valid phone number')
+	if (phoneNumberRGEX(phoneNumber) == true){
+		alert('valid phone number');
 	}else{
-		console.log('unvalid phone number')
+		alert('unvalid phone number');
 	}
 }

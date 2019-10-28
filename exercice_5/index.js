@@ -3,37 +3,42 @@
 /*
 *regex check on form
 */
+var formSubmit = document.getElementById('submit');
+
+formSubmit.addEventListener('click',validate);
+
 function validate(){
   var firstName = document.getElementById('firstName').value;
   var lastName = document.getElementById('lastName').value;
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
-  var firstNameRGEX = /^[a-zA-Z]$/;
-  var lastNameRGEX = /^[a-zA-Z]$/;
-  var emailRGEX = /^[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z0-9_]{2.4}$/;
-  var passwordRGEX = /^[a-zA-Z0-9_]$/;
-  var firstNameResult = firstNameRGEX.test(firstName);
-  var lastNameResult = lastNameRGEX.test(lastName);
-  var emailResult = emailRGEX.test(email);
-  var passwordResult = passwordRGEX.test(password);
+  var firstNameRGEX = /^[a-zA-Z]*$/;
+  var lastNameRGEX = /^[a-zA-Z]*$/;
+  var emailRGEX = /[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+  var passwordRGEX = /^[a-zA-Z0-9_]*$/;
 
-/*
-*show error
-*/
 
-  if (firstNameResult == false){
-  	alert('unvalid first name');
-  };
+  if (firstNameRGEX.test(firstName) == false){
+    alert('fail first name');
+  }else{
+    alert ('success first name')
+  }
 
-  if (lastNameResult == false){
-  	alert('unvalid last name');
-  };
+  if (lastNameRGEX.test(lastName) == false){
+    alert('fail last name');
+  }else{
+    alert('success last name')
+  }
 
-  if (emailResult == false){
-  	alert('unvalid email');
-  };
+  if (emailRGEX.test(email) == false){
+    alert('fail email');
+  }else{
+    alert('success email');
+  }
 
-  if (passwordResult == false){
-  	alert('unvalid password');
+  if (passwordRGEX.test(password) == false){
+    alert ('fail password');
+  }else{
+    alert('success password');
   }
 }
