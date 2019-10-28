@@ -8,12 +8,12 @@ function computeNotes(){
 	var i = 1;
 
 	while(compute == true){
-		for (var i = 1; i < tabgrade.length; i++) {
-			addition = addition + tabgrade[i];
+		for (var i = 0; i < tabgrade.length; i++) {
+			addition += tabgrade[i];
 		}
-		result = addition / i;
-		console.log(result)
+		result = addition / tabgrade.length;
 		compute = false;
 	}
-
+	alert('la moyenne est de'+ result);
 }
+ computeNotes();

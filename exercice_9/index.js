@@ -1,18 +1,30 @@
 'use strict'
 
-function Palindrome(){
-	var entree = prompt("Veillez saisir votre mot").toLowerCase();
-	entree_1 = [...entree].reverse().join('');
+var submitPalin = document.getElementById('submit');
 
-	if (entree === "") {
-    	console.log('Veuillez saisir un mot d\'abord');
+
+function checkPalindrome(str){
+
+	var string_test = str.split('');
+	var str_invert = [];
+
+	for (var i =0;  i <= string_test.length; i++){
+		str_invert [i] = string_test [string_test.length-i-1];
+	}
+	alert(string_test);
+	alert(str_invert);
+
+	string_test = string_test.join('');
+	str_invert = str_invert.join('');
+
+	alert(string_test);
+	alert(str_invert);
+
+	if (string_test == str_invert) {
+		alert(str + ' is a palindrome');
+	}else{
+		alert(str + ' is not a palindrome');
 	}
 
-	else if (entree === entree_1) {
-    	console.log(entree + ' est un palindrome');
-	}
-
-	else {
-    	console.log(entree + ' n\'est pas un palindrome');
-	}
 }
+checkPalindrome('kayak');
