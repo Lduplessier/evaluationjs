@@ -14,8 +14,10 @@ class Morpion {
         this.game = true;
     }
 
+    //lauching the game
     gameOn(){
         while(this.game == true){
+            //setting the turns
             turnSymbol(){
                 if (this.player_turn == true){
                     this.turn = playerO;
@@ -24,8 +26,9 @@ class Morpion {
                     this.turn = playerX;
                     this.player_turn = true;
                 }
-            };
-
+            }
+            
+            //generating the grid
             generateGrid(){
                 for (var x = 1; tr <= 2; x++) {
         
@@ -44,9 +47,10 @@ class Morpion {
                         elTd.style.color = 'white';
             
                     }
-            }
+                }
             }
 
+            //adding symbol to the case of the grid
             addSymbol(){
                 elTd.addEventListener('click',turnSymbol);
                 if (this.map[y][x] =! ''){
@@ -57,6 +61,7 @@ class Morpion {
                 }
             };
 
+            //checking winning situation
             checkWin(){
                 if(this.map[1][1] == this.map[2][1] == this.map[3][1] || this.map[1][2] == this.map[2][2] == this.map[3][2] || this.map[1][3] == this.map[2][3] == this.map[3][3] || this.map[1][1] == this.map[1][2] == this.map[1][3] || this.map[2][1] == this.map[2][2] == this.map[2][3] || this.map[3][1] == this.map[3][2] == this.map[3][3] || this.map[1][1] == this.map[2][2] == this.map[3][3] || this.map[3][1] == this.map[2][2] == this.map[1][3]){
                     alert('point pour ' + this.turn);
@@ -70,6 +75,7 @@ class Morpion {
                 restartGame();
             };
 
+            //checking tie situation
             checkTie(){
                 if((this.map[1][1] && this.map[2][1] && this.map[3][1] && this.map[1][2] && this.map[2][2] && this.map[3][2] && this.map[1][3] && this.map[2][3] && this.map[3][3] != '') && checkWin() == false){
                     alert('tie game');
@@ -77,12 +83,14 @@ class Morpion {
                 }
             };
 
+            //reseting the grid
             restartGame(){
                 this.map = [['','',''],
                             ['','',''],
                             ['','','']];
             };
 
+            //point counter with stop to game if player has 3 point
             winGame(){
                 if(this.playerO_score == 3){
                     alert('Player O has won');
