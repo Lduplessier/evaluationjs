@@ -1,7 +1,7 @@
 'use strict'
 
 class Morpion {
-    constructor(player_turn, playerX, playerO, turn, playerO_score, playerX_Score){
+    constructor(player_turn, turn, playerO_score, playerX_Score, map, game){
         this.player_turn = true;
         this.playerX = 'X';
         this.playerO = 'O';
@@ -11,63 +11,68 @@ class Morpion {
         this.map = [['','',''],
                     ['','',''],
                     ['','','']]; 
+        this.game = true;
     }
 
-   /* var player_turn = true;
-    var playerX = 'X';
-    var playerO = 'O';
-    var turn;
-    var playerX_Score = 0;
-    var playerO_score = 0;
-    
-    var map = [['','',''],
-               ['','',''],
-               ['','','']];
-    */
-
-    turnSymbol(){
-        if (player_turn == true){
-            turn = playerO;
-            player_turn = false;
-        }else if (player_turn == false){
-            turn = playerX;
-            player_turn = true;
-        }
-    }
+    gameOn(){
+        while(this.game == true){
+            turnSymbol(){
+                if (this.player_turn == true){
+                    this.turn = playerO;
+                    this.player_turn = false;
+                }else if (this.player_turn == false){
+                    this.turn = playerX;
+                    this.player_turn = true;
+                }
+            };
 
 
-    addSymbol(){
-        case.addEventListener('click',turnSymbol);
-        if (map[y][x] =! ''){
-            alert('already taken');
-        }else{
-            map[y][x] = this.turn;
-        }
-    }
+            addSymbol(){
+                //case.addEventListener('click',turnSymbol);
+                if (this.map[y][x] =! ''){
+                    alert('already taken');
+                }else{
+                    this.map[y][x] = this.turn;
+                }
+            };
 
-    checkWin(){
-        if(map[1][1] == map[2][1] == map[3][1] || map[1][2] == map[2][2] == map[3][2] || map[1][3] == map[2][3] == map[3][3] || map[1][1] == map[1][2] == map[1][3] || map[2][1] == map[2][2] == map[2][3] || map[3][1] == map[3][2] == map[3][3] || map[1][1] == map[2][2] == map[3][3] || map[3][1] == map[2][2] == map[1][3]){
-            return true;
-            alert('point pour ' + this.turn);
-            if(turn == 'X'){
-                playerX_Score++;
-            }else if(turn == 'O'){
-                playerO_score++;
+            checkWin(){
+                if(this.map[1][1] == this.map[2][1] == this.map[3][1] || this.map[1][2] == this.map[2][2] == this.map[3][2] || this.map[1][3] == this.map[2][3] == this.map[3][3] || this.map[1][1] == this.map[1][2] == this.map[1][3] || this.map[2][1] == this.map[2][2] == this.map[2][3] || this.map[3][1] == this.map[3][2] == this.map[3][3] || this.map[1][1] == this.map[2][2] == this.map[3][3] || this.map[3][1] == this.map[2][2] == this.map[1][3]){
+                    alert('point pour ' + this.turn);
+                    if(this.turn == 'X'){
+                        this.playerX_Score++;
+                    }else if(this.turn == 'O'){
+                        this.playerO_score++;
+                    };
+                    return true;
+                }
+                restartGame();
+            };
+
+            checkTie(){
+                if((this.map[1][1] && this.map[2][1] && this.map[3][1] && this.map[1][2] && this.map[2][2] && this.map[3][2] && this.map[1][3] && this.map[2][3] && this.map[3][3] != '') && checkWin() == false){
+                    alert('tie game');
+                    restartGame();
+                }
+            };
+
+            restartGame(){
+                this.map = [['','',''],
+                            ['','',''],
+                            ['','','']];
+            };
+
+            winGame(){
+                if(this.playerO_score == 3){
+                    alert('Player O has won');
+                    this.game = false;
+                }else if(this.playerX_Score == 3){
+                    alert('Player X has won');
+                    this.false = false;
+                }
             };
         }
-        restartGame;
-    }
-
-    function checkTie(){
-        if(map[1][1] && map[2][1] && map[3][1] && map[1][2] && map[2][2] && map[3][2] && map[1][3] && map[2][3] && map[3][3] =! '' && checkWin == false){
-            alert('tie game');
-            restartGame;
-        }
-    }
-
-    function restartGame(){
-        this.map = [['','',''],
-                    ['','',''],
-                    ['','','']];
     }
 }
+
+Morpion.gameOn();
