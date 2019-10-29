@@ -26,13 +26,34 @@ class Morpion {
                 }
             };
 
+            generateGrid(){
+                for (var x = 1; tr <= 2; x++) {
+        
+                    //write tr
+                    var elTr = document.createElement('tr');
+            
+                    for(var y = 0; td <= 2; y++){
+            
+                        //write td
+                        var elTd = document.createElement('td');
+            
+                        elTd.setAttributes('id', this.Map[y][x]);
+            
+                        elTd.style.borderWidth = '1px';
+                        elTd.style.borderColor = 'black';
+                        elTd.style.color = 'white';
+            
+                    }
+            }
+            }
 
             addSymbol(){
-                //case.addEventListener('click',turnSymbol);
+                elTd.addEventListener('click',turnSymbol);
                 if (this.map[y][x] =! ''){
                     alert('already taken');
                 }else{
                     this.map[y][x] = this.turn;
+                    elTd.innerText = turn;
                 }
             };
 
