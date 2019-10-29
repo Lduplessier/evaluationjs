@@ -29,6 +29,9 @@ function validate(){
     alert('fail first name');
     result_firstName.innerText = 'Invalid first name';
     result_firstName.style.color = 'red';
+  }else if(firstName == ''){
+    result_firstName.innerText = 'Empty first name';
+    result_firstName.style = 'red';
   }else{
     alert ('success first name')
     result_firstName.innerText = 'Valid first name';
@@ -39,6 +42,9 @@ function validate(){
     alert('fail last name');
     result_lastName.innerText = 'Invalid last name';
     result_lastName.style.color = 'red';
+  }else if(lastName == ''){
+    result_lastName.innerText = 'Empty last name';
+    result_lastName.style = 'red';
   }else{
     alert('success last name')
     result_lastName.innerText = 'Valid last name';
@@ -49,6 +55,9 @@ function validate(){
     alert('fail email');
     result_email.innerText = 'Invalid email';
     result_email.style.color = 'red';
+  }else if(email == ''){
+    result_email.innerText = 'Empty email';
+    result_email.style = 'red';
   }else{
     alert('success email');
     result_email.innerText = 'Valid email';
@@ -59,6 +68,9 @@ function validate(){
     alert ('fail password');
     result_password.innerText = 'Invalid password';
     result_password.style.color = 'red';
+  }else if(password == ''){
+    result_password.innerText = 'Empty password';
+    result_password.style = 'red';
   }else{
     alert('success password');
     result_password.innerText = 'Valid password';

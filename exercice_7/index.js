@@ -5,7 +5,6 @@ function computeNotes(){
 	var compute = true;
 	var addition = 0;
 	var result = 0;
-	var i = 1;
 
 	//setting a stop with a boolean
 	while(compute == true){
