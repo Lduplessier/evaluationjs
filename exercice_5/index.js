@@ -30,7 +30,7 @@ function validate(){
     result_firstName.style.color = 'red';
   }else if(firstName == ''){
     result_firstName.innerText = 'Empty first name';
-    result_firstName.style = 'red';
+    result_firstName.style.color = 'red';
   }else{
     result_firstName.innerText = 'Valid first name';
     result_firstName.style.color = 'green';
@@ -42,7 +42,7 @@ function validate(){
     result_lastName.style.color = 'red';
   }else if(lastName == ''){
     result_lastName.innerText = 'Empty last name';
-    result_lastName.style = 'red';
+    result_lastName.style.color = 'red';
   }else{
     result_lastName.innerText = 'Valid last name';
     result_lastName.style.color = 'green';
@@ -54,7 +54,7 @@ function validate(){
     result_email.style.color = 'red';
   }else if(email == ''){
     result_email.innerText = 'Empty email';
-    result_email.style = 'red';
+    result_email.style.color = 'red';
   }else{
     result_email.innerText = 'Valid email';
     result_email.style.color = 'green';
@@ -66,7 +66,7 @@ function validate(){
     result_password.style.color = 'red';
   }else if(password == ''){
     result_password.innerText = 'Empty password';
-    result_password.style = 'red';
+    result_password.style.color = 'red';
   }else{
     result_password.innerText = 'Valid password';
     result_password.style.color = 'green';

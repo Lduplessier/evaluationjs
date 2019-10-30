@@ -35,27 +35,43 @@ var Morpion =
            
             //generating the grid
             function generateGrid(){
-                for (var x = 0; tr <= 2; x++) {
-        
+                var elBody = document.querySelector('body');
+                var elTable = document.createElement('table');
+            
+                elTable.style.height = '500px';
+                elTable.style.width = '500px';
+                elTable.style.border = 'black';
+                elTable.style.borderWidth = '5px';
+                elTable.style.borderStyle = 'solid';
+                for (var x = 0; x <= 2; x++) {
+            
                     //write tr
                     var elTr = document.createElement('tr');
             
-                    for(var y = 0; td <= 2; y++){
-            
+                    for(var y = 0; y <= 2; y++){
                         //write td
                         var elTd = document.createElement('td');
-
-                        elTd.setAttributes('id', this.Map[y][x]);
                         
-                        elTd.style.height = '30px';
-                        elTd.style.width = '30px';
-                        elTd.style.borderWidth = '5px';
-                        elTd.style.borderColor = 'black';
-                        elTd.style.fill = 'white';
-                    
+                        //setting id for td
+                        elTd.setAttribute('id', map[y][x]);
             
-                    };
-                };
+                        //css td
+                        elTd.style.borderWidth = '1px';
+                        elTd.style.borderStyle = 'solid';
+                        elTd.style.borderColor = 'white';
+                        elTd.style.backgroundColor = 'black';
+                        elTd.style.color = 'white';
+                        elTd.style.height = '15px';
+                        elTd.style.width = '15px';
+                        
+                        //appendchild td
+                        elTr.appendChild(elTd);
+                    }
+            
+                    //appendchild tr
+                    elTable.appendChild(elTr)
+                }
+                elBody.appendChild(elTable);
             }
 
             //adding symbol to the case of the grid
