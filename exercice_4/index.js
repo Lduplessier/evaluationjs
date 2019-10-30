@@ -22,7 +22,7 @@ var worldMap = {
 
     //enter svg
     selectSvg(){
-        var svg = document.getElementById('svgPic');
+        var svg = document.getElementById('svg');
         svg.addEventListener('load',this.idSelector);
     },
 
@@ -42,8 +42,9 @@ var worldMap = {
             color = '#2550db';
             elem.target.style.fill = color;
         };
-        countryName = document.getElementById('countryName');
-        countryName.innerText = elem.target.id
+        countryName = document.getElementById('path');
+        countryName.innerText = elem.target.id;
+        countryName.style.color = 'black'
     },
 
     //switch to black method
@@ -53,10 +54,8 @@ var worldMap = {
             color = '#000000';
             elem.target.style.fill = color;
         };
-        countryName = document.getElementById('countryName');
-        countryName.innerText = ''
+
     }
 }
-
 
 worldMap.selectSvg();

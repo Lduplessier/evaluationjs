@@ -116,3 +116,4 @@ var Morpion =
             };
         }
     };
+Morpion.gameOn();
